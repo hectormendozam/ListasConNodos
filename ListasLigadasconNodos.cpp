@@ -194,6 +194,25 @@ void ListaLigada::insertarPosicion(int dato, int posicion)
     aux->sig = nuevo; // Sustitucion de los datos
 }
 
+// IMPRIMIR LISTA ENLAZADA EN ORDEN INVERSO
+void ListaLigada::imprimirReversa(Nodo* nodo)
+{
+    if (nodo == NULL)
+    {
+        return;
+    }
+
+    imprimirReversa(nodo->sig);
+    cout << nodo->info << " --> ";
+}
+
+void ListaLigada::imprimirReversa()
+{
+    cout << "NULL" << " <--- ";
+    imprimirReversa(raiz);
+    cout << "raiz" << endl;
+}
+
 int main()
 {
     ListaLigada l1;
